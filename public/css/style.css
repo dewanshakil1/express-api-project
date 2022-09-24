@@ -1,0 +1,37 @@
+.student img {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.studentForm label img {
+	height: 80px;
+	object-fit: cover;
+	cursor: pointer;
+	margin-left: -21px;
+}
+.studentForm input[type='file'] {
+	display: none;
+}
+.preview-student {
+	max-width: 100%;
+}
+.single-student {
+	text-align: center;
+}
+.single-student img {
+	height: 250px;
+	width: 250px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin: 50px auto;
+	display: block;
+}
+.user-details {
+	text-align: center;
+}
+
+.user-details img {
+	width: 130px;
+	height: 130px;
+}

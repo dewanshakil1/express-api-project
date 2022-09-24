@@ -1,0 +1,41 @@
+<div class="container my-2 student">
+	<a class="btn btn-sm btn-info text-white py-2" href="/student/create"
+		>Add new student</a
+	>
+	<a
+		class="btn btn-sm btn-danger text-white py-2 my-2"
+		href="/student/unverifyed"
+		>unverifyed student</a
+	>
+	<div class="row justify-content-center">
+		<div class="card shadow">
+			<div class="card-body">
+				<h2 class="text-center bg-info py-2 text-white text-uppercase">
+					All student
+				</h2>
+			</div>
+		</div>
+
+		<% allstudent.reverse().forEach((element,index) => { %>
+
+		<div class="col-md-3 my-2">
+			<div class="card shadow">
+				<div class="card-body">
+					<div class="user-details">
+						<% if (allstudent.photo=="abata.png") { %>
+						<img src="/image/<%= element.photo %>" alt="" />
+						<% } else { %>
+						<img src="/image/student/<%= element.photo %>" alt="" />
+
+						<% } %>
+						<h2><%= element.name %></h2>
+						<h2><%= element.cell %></h2>
+					</div>
+				</div>
+				<hr />
+				<a class="btn btn-info" href="/student/<%= element.id %>">View</a>
+			</div>
+		</div>
+		<% }) %>
+	</div>
+</div>

@@ -1,0 +1,67 @@
+<div class="container my-4 student">
+	<div class="row justify-content-center">
+		<div class="col-md-10">
+			<a class="btn btn-sm btn-info text-white py-2" href="/student">Back</a>
+			<div class="card shadow">
+				<div class="card-body">
+					<h2 class="text-center bg-info py-2 text-white text-uppercase">
+						Unverified student
+					</h2>
+					<table class="table table-striped this-myTable">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>name</th>
+								<th>email</th>
+								<th>cell</th>
+								<th>Verify</th>
+								<th>photo</th>
+								<th>action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% allstudent.reverse().forEach((element,index) => { %>
+							<tr class="align-middle me-3">
+								<td><%= index + 1 %></td>
+								<td><%= element.name %></td>
+								<td><%= element.email %></td>
+								<td><%= element.cell %></td>
+								<td>
+									<a class="btn btn-sm btn-warning" href="">Verify by phone</a>
+								</td>
+								<td>
+									<% if (allstudent.photo=="abata.png") { %>
+									<img src="/image/<%= element.photo %>" alt="" />
+									<% } else { %>
+									<img src="/image/student/<%= element.photo %>" alt="" />
+
+									<% } %>
+								</td>
+
+								<td>
+									<a
+										class="btn btn-sm btn-info"
+										href="/student/<%= element.id %>"
+										><i class="fas fa-eye"></i
+									></a>
+									<a
+										class="btn btn-sm btn-warning"
+										href="/student/edit/<%= element.id %>"
+										><i class="fas fa-edit"></i
+									></a>
+									<a
+										class="btn btn-sm btn-danger delete-btn"
+										href="/student/delete/<%= element.id %>"
+										><i class="fas fa-trash"></i
+									></a>
+								</td>
+							</tr>
+
+							<% }) %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
